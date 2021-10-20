@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_blue"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.TouxiangActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/main_blue"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.1">
+
+<!--            <com.xuexiang.xui.widget.imageview.RadiusImageView-->
+<!--                android:id="@+id/iv_photo_home"-->
+<!--                android:layout_width="70dp"-->
+<!--                android:layout_height="70dp"-->
+<!--                android:layout_marginLeft="150dp"-->
+<!--                android:src="@drawable/ima_tu" />-->
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/iv_photo_home"
+                android:layout_marginLeft="140dp"
+                android:src="@drawable/ima_tu"/>
+
+            <TextView
+                android:id="@+id/TakePhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_photo_home"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_whole_white_10dp"
+                android:onClick="takePhoto"
+                android:padding="10dp"
+                android:text="拍照"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/Photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_photo_home"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_whole_white_10dp"
+                android:onClick="choosePhoto"
+                android:padding="10dp"
+                android:text="相册"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/bitmapSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Photo"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_whole_white_10dp"
+                android:onClick="save"
+                android:text="保存"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

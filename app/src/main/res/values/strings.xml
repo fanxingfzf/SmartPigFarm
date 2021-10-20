@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">智慧养猪</string>
+    <string name="title_home">我的</string>
+    <string name="title_dashboard">观测台</string>
+    <string name="title_notifications">操作台</string>
+
+    <string-array name="PigFarm">
+        <item>猪圈1</item>
+        <item>猪圈2</item>
+        <item>猪圈3</item>
+        <item>猪圈4</item>
+    </string-array>
+</resources>

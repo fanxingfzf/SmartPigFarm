@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OperatingFloorActivity">
+
+    <!--智能控制-->
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="50dp"
+        android:text="智能控制"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/tv6"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:text="风扇1控制"
+        android:textColor="@color/blue_200"
+        android:layout_marginLeft="40dp"
+        android:background="@drawable/btn_empty_round_blue"
+        android:layout_below="@+id/tv5"
+        android:layout_marginTop="30dp"/>
+
+
+
+    <Switch
+        android:id="@+id/swh_status1"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:thumb="@drawable/thumb_selector"
+        android:track="@drawable/track_selector"
+        android:layout_below="@+id/tv6"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"/>
+
+
+    <TextView
+        android:id="@+id/tv7"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_toRightOf="@+id/tv6"
+        android:layout_marginLeft="140dp"
+        android:text="风扇2控制"
+        android:textColor="@color/blue_200"
+        android:background="@drawable/btn_empty_round_blue"
+        android:layout_below="@+id/tv5"
+        android:layout_marginTop="30dp"/>
+
+    <Switch
+        android:id="@+id/swh_status2"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:thumb="@drawable/thumb_selector"
+        android:track="@drawable/track_selector"
+        android:layout_below="@+id/tv7"
+        android:layout_toRightOf="@id/swh_status1"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="20dp"/>
+
+
+    <TextView
+        android:id="@+id/tv8"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:text="刮粪板控制"
+        android:textColor="@color/red"
+        android:layout_marginLeft="40dp"
+        android:background="@drawable/btn_empty_round_red"
+        android:layout_below="@+id/swh_status1"
+        android:layout_marginTop="40dp"/>
+
+    <Switch
+        android:id="@+id/swh_status3"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:thumb="@drawable/thumb_selector"
+        android:track="@drawable/track_selector"
+        android:layout_below="@+id/tv8"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"/>
+
+
+    <TextView
+        android:id="@+id/tv9"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_toRightOf="@+id/tv6"
+        android:layout_marginLeft="140dp"
+        android:text="水帘控制"
+        android:textColor="@color/red"
+        android:background="@drawable/btn_empty_round_red"
+        android:layout_below="@+id/swh_status2"
+        android:layout_marginTop="40dp"/>
+
+    <Switch
+        android:id="@+id/swh_status4"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:thumb="@drawable/thumb_selector"
+        android:track="@drawable/track_selector"
+        android:layout_below="@+id/tv9"
+        android:layout_toRightOf="@id/swh_status1"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/tv10"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:text="投食控制"
+        android:textColor="@color/green"
+        android:layout_marginLeft="40dp"
+        android:background="@drawable/btn_empty_round_green"
+        android:layout_below="@+id/swh_status3"
+        android:layout_marginTop="40dp"/>
+
+    <Switch
+        android:id="@+id/swh_status5"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:thumb="@drawable/thumb_selector"
+        android:track="@drawable/track_selector"
+        android:layout_below="@+id/tv10"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"/>
+
+
+    <TextView
+        android:id="@+id/tv11"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_toRightOf="@+id/tv10"
+        android:layout_marginLeft="140dp"
+        android:text="喂水控制"
+        android:textColor="@color/green"
+        android:background="@drawable/btn_empty_round_green"
+        android:layout_below="@+id/swh_status4"
+        android:layout_marginTop="40dp"/>
+
+    <Switch
+        android:id="@+id/swh_status6"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:thumb="@drawable/thumb_selector"
+        android:track="@drawable/track_selector"
+        android:layout_below="@+id/tv11"
+        android:layout_toRightOf="@id/swh_status5"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btn_location"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/swh_status5"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/btn_empty_round_blue"
+        android:text="定位"
+        android:textColor="@color/blue_200"
+        android:textSize="19sp" />
+    <Button
+        android:id="@+id/btn_monitor"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/swh_status6"
+        android:layout_marginTop="40dp"
+        android:layout_toRightOf="@+id/btn_location"
+        android:layout_marginLeft="140dp"
+        android:text="监控"
+        android:textSize="19sp"
+        android:background="@drawable/btn_empty_round_red"
+        android:textColor="@color/red"/>
+
+    <Button
+        android:id="@+id/btn_wifi"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/btn_location"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="40dp"
+        android:text="Wifi"
+        android:textSize="19sp"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_empty_round_blue"
+        android:textColor="@color/blue_200"/>
+</RelativeLayout>

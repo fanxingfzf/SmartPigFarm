@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
+    android:orientation="vertical">
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toTopOf="@id/nav_view"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/mobile_navigation" />
+    </androidx.viewpager.widget.ViewPager>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/tvResult"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:entries="@array/PigFarm"
+        android:gravity="center"
+        android:spinnerMode="dropdown"
+        android:textSize="20sp" />
+//当前温度
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/tvResult"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="10dp"
+        android:background="#FF4040"
+        android:text="当前温度"
+        android:paddingTop="10dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        />
+
+    <TextView
+        android:id="@+id/temperature"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/tv1"
+        android:background="#FF4040"
+        android:paddingLeft="10dp"
+        android:textColor="@color/white" />
+
+
+    <Button
+        android:id="@+id/btn_tp1"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_empty_round_red"
+        android:layout_below="@+id/temperature"
+        android:layout_marginTop="30dp"
+        android:text="温度折线图"
+
+        android:textColor="#FF0033"/>
+    //当前湿度
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/tvResult"
+        android:layout_toRightOf="@+id/tv1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#FFA500"
+        android:text="当前湿度"
+        android:paddingTop="10dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        />
+    <TextView
+        android:id="@+id/humidity"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tv2"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/temperature"
+        android:background="#FFA500"
+        android:textColor="@color/white"/>
+    <Button
+        android:id="@+id/btn_hd1"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_empty_round_yellow"
+        android:layout_below="@+id/temperature"
+        android:layout_toRightOf="@+id/btn_tp1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:text="温度饼状图"
+        android:textColor="#E6E61A"/>
+
+    //当前氨气
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/tvResult"
+        android:layout_toRightOf="@+id/tv2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#32CD32"
+        android:text="当前氨气"
+        android:paddingTop="10dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        />
+
+    <TextView
+        android:id="@+id/ammonia_gas"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/tv3"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/humidity"
+        android:background="#32CD32"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_amg"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/temperature"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@+id/btn_hd1"
+        android:background="@drawable/btn_empty_round_green"
+        android:text="氨气条形图"
+        android:textColor="#3CC43C" />
+
+    //当前光照
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/tvResult"
+        android:layout_toRightOf="@+id/tv3"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#4682B4"
+        android:text="当前光照"
+        android:paddingTop="10dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        />
+    <TextView
+        android:id="@+id/light"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/tv3"
+        android:layout_toRightOf="@id/ammonia_gas"
+        android:layout_marginLeft="10dp"
+        android:background="#4682B4"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/btn_light1"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/temperature"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@+id/btn_amg"
+        android:background="@drawable/btn_empty_round_blue"
+        android:text="光照条形图"
+        android:textColor="#226DDD" />
+
+    <Button
+        android:id="@+id/GetData"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/btn_light1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_empty_round_blue"
+        android:text="获取数据库信息"
+        android:textColor="#226DDD" />
+
+</RelativeLayout>

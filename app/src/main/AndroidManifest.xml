@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapplication">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- 访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/smart_pig_farm"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/smart_pig_farm"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication">
+        <activity
+            android:name=".Map.BaiduMapActivity"
+            android:exported="true"
+            android:label="百度地图"
+            android:parentActivityName=".OperatingFloorActivity" />
+        <activity
+            android:name=".activity.QueryActivity"
+            android:exported="true"
+            android:label="查询数据"
+            android:parentActivityName=".activity.DataActivity" />
+        <activity
+            android:name=".activity.UpdataActivity"
+            android:exported="true"
+            android:label="更新数据"
+            android:parentActivityName=".activity.DataActivity" />
+        <activity
+            android:name=".activity.DeleteActivity"
+            android:exported="true"
+            android:label="删除数据"
+            android:parentActivityName=".activity.DataActivity" />
+        <activity
+            android:name=".activity.InsertActivity"
+            android:exported="true"
+            android:label="添加数据"
+            android:parentActivityName=".activity.DataActivity" />
+        <activity
+            android:name=".activity.DataActivity"
+            android:exported="true"
+            android:label="数据库"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".activity.GuanyuActivity"
+            android:exported="true"
+            android:label="关于"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".activity.ShezhiActivity"
+            android:exported="true"
+            android:label="设置"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".activity.ShebeiActivity"
+            android:exported="true"
+            android:label="设备"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".activity.ZhanghaoActivity"
+            android:exported="true"
+            android:label="账号"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".activity.TouxiangActivity"
+            android:exported="true"
+            android:label="头像"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_home"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".OperatingFloorActivity"
+            android:label="@string/title_notifications"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_dashboard" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.FindPswActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.myapplication.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/files" />
+        </provider>
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="3u9OYfMLmCMIuSAuHllPY167I6Uar3yM"></meta-data>
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"></service>
+    </application>
+
+</manifest>
